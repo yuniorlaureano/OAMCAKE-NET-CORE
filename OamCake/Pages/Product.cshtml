@@ -1,0 +1,113 @@
+﻿@page "{id?}/{action?}"
+@model ProductModel
+@{
+    ViewData["Title"] = "Product";
+}
+<div class="card w-100">
+    <div class="card-body">
+        <h5 class="card-title p-5">Producto</h5>
+        @if (Model.Message != null && Model.Message.Length > 0)
+        {
+            <div class="alert alert-success  alert-dismissible fade show ml-5 mr-5" role="alert">
+                @Model.Message
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+        <p class="card-text">
+            <form class="border border-light p-5" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="~/image/cake.png" class="rounded mx-auto d-block" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <input type="hidden" asp-for="Supply.Id" />
+                        <input type="text" asp-for="Supply.Name" class="form-control mb-4" placeholder="Nombre">
+                        <input type="text" asp-for="Supply.Description" class="form-control mb-4" placeholder="Descripción">
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table table-sm" id="product-details">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <select class="browser-default custom-select mb-4" id="product-product-detail">
+                                        <option value="" disabled>Insumo</option>
+                                        <option value="1" selected>Arina</option>
+                                        <option value="2">Azucar</option>
+                                        <option value="3">Como</option>
+                                        <option value="4">Aceite</option>
+                                    </select>
+                                </th>
+                                <th style="width: 150px;" scope="col">
+                                    <input type="number" name="name" style="width: 150px;" placeholder="Cantidad"  id="qt-product-detail" class="form-control  mb-4" />
+                                </th>
+                                <th scope="col">
+                                    <select class="browser-default custom-select mb-4" id="unit-product-detail">
+                                        <option value="" disabled>Medida</option>
+                                        <option value="1" selected>Lira</option>
+                                        <option value="2">Gramo</option>
+                                        <option value="3">Onza</option>
+                                        <option value="4">Kilo</option>
+                                    </select>
+                                </th>
+                                <th scope="col">                                   
+                                    <button type="button" class="btn btn-outline-primary mb-4" id="add-product-detail"><i class="fas fa-plus-square"></i></button>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+        <hr/>
+                <button class="btn btn-outline-primary" type="submit"><i class="far fa-save"></i> Guardar</button>
+                <button class="btn btn-outline-dark" type="submit"><i class="far fa-window-close"></i> Cancelar</button>
+                </form>
+                </p>
+            </div>
+        </div>
+        @section Scripts {
+            <script>
+                $(function () {
+
+                    var details = [];
+
+                    $("#add-product-detail").on("click", function () {
+                        details.push({
+                            cantidad: $("#qt-product-detail").val(),
+                            unidad: $("#unit-product-detail").val(),
+                            producto: $("#product-product-detail").val(),
+                            detalle: ""
+                        });
+
+                        var product = $("#unit-product-detail option[value='" + details[details.length - 1].producto + "']").text();
+                        var qt = $("#qt-product-detail").val();
+                        var unit = $("#unit-product-detail option[value='" + details[details.length - 1].unidad + "']").text();
+                        var td = '<td>' + product + '</td>';
+
+                        td += '<td>' + qt + '</td>';
+                        td += '<td>' + unit + '</td>';
+                        td += '<td><textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="2" placeholder="Detalles"></textarea></td>';
+                        td += '<td><a href="#delete" class="btn btn-outline-danger delete-product-detail" data-index="' + (details.length - 1) + '"><i class="far fa-trash-alt"></i></a></td>';
+
+
+
+                        $("#product-details tbody").append('<tr>' + td + '</tr>');
+                    });
+
+                    $("table").on('click', '.delete-product-detail', function () {
+                        $(this).parents('tr').remove();
+                        var removedIndex = $(this)[0].dataset.index;
+                        details = details.filter(function (item, index) {
+                            return index != removedIndex;
+                        });
+                        console.log(details);
+                    });
+                });
+            </script>
+        }

@@ -1,0 +1,12 @@
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\bin\Release\netstandard2.0\OamCake.Repository.deps.json
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\bin\Release\netstandard2.0\OamCake.Repository.dll
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\bin\Release\netstandard2.0\OamCake.Repository.pdb
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\bin\Release\netstandard2.0\OamCake.Data.dll
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\bin\Release\netstandard2.0\OamCake.Data.pdb
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.csprojAssemblyReference.cache
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.csproj.CoreCompileInputs.cache
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.AssemblyInfoInputs.cache
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.AssemblyInfo.cs
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.csproj.CopyComplete
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.dll
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Repository\obj\Release\netstandard2.0\OamCake.Repository.pdb

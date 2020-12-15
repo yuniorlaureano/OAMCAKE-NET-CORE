@@ -1,0 +1,9 @@
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\bin\Release\netstandard2.0\OamCake.Data.deps.json
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\bin\Release\netstandard2.0\OamCake.Data.dll
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\bin\Release\netstandard2.0\OamCake.Data.pdb
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\obj\Release\netstandard2.0\OamCake.Data.csprojAssemblyReference.cache
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\obj\Release\netstandard2.0\OamCake.Data.csproj.CoreCompileInputs.cache
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\obj\Release\netstandard2.0\OamCake.Data.AssemblyInfoInputs.cache
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\obj\Release\netstandard2.0\OamCake.Data.AssemblyInfo.cs
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\obj\Release\netstandard2.0\OamCake.Data.dll
+C:\Users\yu.laureano\source\repos\OamCake\OamCake.Data\obj\Release\netstandard2.0\OamCake.Data.pdb

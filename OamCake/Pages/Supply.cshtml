@@ -1,0 +1,80 @@
+﻿@page "{id?}/{action?}"
+@model SupplyModel
+@{
+    ViewData["Title"] = "Suministro";
+}
+<div class="card w-100">
+    <div class="card-body">
+        <h5 class="card-title p-5">Suministro</h5>
+        @if (Model.Message != null && Model.Message.Length > 0)
+        {
+            <div class="alert alert-success  alert-dismissible fade show ml-5 mr-5" role="alert">
+                @Model.Message
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+        <p class="card-text">
+            <form class="border border-light p-5" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @if (Model.Supply != null)
+                {
+                    <p>
+                        <a asp-page="./Supply" asp-route-id="@Model.Supply.Id" asp-route-action="new" asp class="btn btn-outline-success">Agregar Nuevo <i class="fas fa-plus-square"></i></a>
+                    </p>
+                    <hr />
+                }
+
+                <input type="hidden" asp-for="Supply.Id"/>
+                <input type="text" asp-for="Supply.Name" class="form-control mb-4" placeholder="Nombre">
+                <input type="text" asp-for="Supply.Description" class="form-control mb-4" placeholder="Descripción">
+                <button class="btn btn-outline-primary" type="submit"><i class="far fa-save"></i> Guardar</button>
+                <button class="btn btn-outline-dark" type="submit"><i class="far fa-window-close"></i> Cancelar</button>
+                <hr />
+                </form>
+                <div class="p-5 border-light">
+                    <table class="table table-striped">
+                        <caption>Suministros</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Supplies != null)
+                            {
+                                @foreach (var item in Model.Supplies)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(model => item.Name)</td>
+                                        <td>@Html.DisplayFor(model => item.Description)</td>
+                                        <td class="text-center">
+                                            <a asp-page="./Supply" class="btn btn-outline-warning" asp-route-id="@item.Id" asp-route-action="edit"><i class="far fa-edit"></i></a>
+                                            <a href="#delete" class="btn btn-outline-danger" data-location="@("/supply/"+item.Id+"/delete")"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                </p>
+            </div>
+        </div>
+        @section Scripts {
+            <script>
+                $(function () {
+                    $("[href='#delete']").on('click', function () {
+                        if (confirm("Desea eliminar el registro")) {
+                            window.location = $(this)[0].dataset.location;
+                        }
+                    });
+
+                });
+            </script>
+        }
